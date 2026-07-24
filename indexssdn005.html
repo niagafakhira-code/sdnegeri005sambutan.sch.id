@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD Negeri 005 Sambutan - Sekolahku Bermahkota</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#1E3A8A',
+                            light: '#3B82F6',
+                            yellow: '#FBBF24',
+                            green: '#10B981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hero-pattern {
+            background-color: #1E3A8A;
+            background-image: radial-gradient(#3B82F6 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-yellow selection:text-brand-blue overflow-x-hidden">
+
+    <nav class="fixed w-full z-40 glass-effect shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-12 h-12 bg-gradient-to-br from-brand-blue to-brand-light text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg">
+                        SD
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-lg leading-tight text-brand-blue">SD Negeri 005</h1>
+                        <p class="text-xs text-slate-500 font-medium">SAMBUTAN</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-slate-600 hover:text-brand-blue font-medium transition-colors">Beranda</a>
+                    <a href="#profil" class="text-slate-600 hover:text-brand-blue font-medium transition-colors">Profil</a>
+                    <a href="#ekskul" class="text-slate-600 hover:text-brand-blue font-medium transition-colors">Ekstrakurikuler</a>
+                    <button onclick="openModal()" class="bg-brand-yellow hover:bg-yellow-500 text-brand-blue font-bold px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-solid fa-qrcode"></i> Portal Absensi
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-blue focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#beranda" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-blue hover:bg-blue-50 rounded-lg">Beranda</a>
+                <a href="#profil" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-blue hover:bg-blue-50 rounded-lg">Profil</a>
+                <a href="#ekskul" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-blue hover:bg-blue-50 rounded-lg">Ekstrakurikuler</a>
+                <div class="pt-2 px-3">
+                    <button onclick="openModal()" class="w-full bg-brand-yellow text-brand-blue font-bold px-4 py-3 rounded-xl shadow text-center flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-qrcode"></i> Portal Absensi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="beranda" class="pt-20 lg:pt-0 min-h-[90vh] flex items-center hero-pattern relative overflow-hidden">
+        <!-- Dekorasi Background -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-light opacity-20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-yellow opacity-10 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 lg:py-0 w-full flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-blue-900/50 backdrop-blur border border-blue-400/30 text-blue-200 text-sm font-semibold mb-6 animate-fade-in-up">
+                    <i class="fa-solid fa-graduation-cap mr-2"></i> Tahun Ajaran 2026/2027
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up delay-100">
+                    Sekolahku <br/>
+                    <span class="text-brand-yellow">BERMAHKOTA</span>
+                </h1>
+                <p class="text-blue-100 text-lg md:text-xl mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up delay-200">
+                    Mewujudkan peserta didik tangguh, berwawasan lingkungan, dan berkarakter Pancasila melalui pembelajaran inovatif di SD Negeri 005 Sambutan.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up delay-300">
+                    <button onclick="openModal()" class="bg-brand-yellow hover:bg-yellow-400 text-brand-blue font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 group text-lg">
+                        <i class="fa-solid fa-check-to-slot group-hover:scale-110 transition-transform"></i>
+                        Isi Absensi Sekarang
+                    </button>
+                    <a href="#profil" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-8 py-4 rounded-xl backdrop-blur transition-all flex items-center justify-center gap-2">
+                        Pelajari Profil <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2 mt-12 lg:mt-0 animate-fade-in-up delay-200 relative">
+                <!-- Ilustrasi Inovatif -->
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 transform rotate-2 hover:rotate-0 transition-transform duration-500 bg-white p-2">
+                    <img src="https://placehold.co/800x600/1E3A8A/FFFFFF?text=Ilustrasi+Pendidikan+Digital" alt="Ilustrasi Pembelajaran" class="w-full h-auto rounded-2xl">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4 transform -rotate-3">
+                        <div class="w-12 h-12 bg-green-100 text-brand-green rounded-full flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-bold uppercase">Program Unggulan</p>
+                            <p class="text-sm font-bold text-slate-800">Sekolah Adiwiyata</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white relative -mt-10 rounded-t-[3rem] z-20 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-brand-blue">Filosofi <span class="text-brand-yellow">BERMAHKOTA</span></h2>
+                <p class="text-slate-500 mt-2">Landasan karakter utama siswa SDN 005 Sambutan</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- BER -->
+                <div class="bg-blue-50 p-6 rounded-2xl text-center hover:shadow-md transition-shadow border border-blue-100">
+                    <div class="w-16 h-16 mx-auto bg-brand-blue text-white rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg shadow-blue-200 rotate-3">
+                        <i class="fa-solid fa-star-and-crescent"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">BER</h3>
+                    <p class="text-sm text-slate-600 mt-2">Beriman, Berkarakter, Berprestasi</p>
+                </div>
+                <!-- MAH -->
+                <div class="bg-green-50 p-6 rounded-2xl text-center hover:shadow-md transition-shadow border border-green-100">
+                    <div class="w-16 h-16 mx-auto bg-brand-green text-white rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg shadow-green-200 -rotate-3">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">MAH</h3>
+                    <p class="text-sm text-slate-600 mt-2">Ramah Lingkungan</p>
+                </div>
+                <!-- KO -->
+                <div class="bg-yellow-50 p-6 rounded-2xl text-center hover:shadow-md transition-shadow border border-yellow-100">
+                    <div class="w-16 h-16 mx-auto bg-brand-yellow text-brand-blue rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg shadow-yellow-200 rotate-3">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">KO</h3>
+                    <p class="text-sm text-slate-600 mt-2">Kolaborasi</p>
+                </div>
+                <!-- TA -->
+                <div class="bg-red-50 p-6 rounded-2xl text-center hover:shadow-md transition-shadow border border-red-100">
+                    <div class="w-16 h-16 mx-auto bg-red-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg shadow-red-200 -rotate-3">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">TA</h3>
+                    <p class="text-sm text-slate-600 mt-2">Tangguh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profil" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Visi -->
+                <div class="lg:col-span-5 flex flex-col justify-center">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-brand-blue font-semibold text-sm mb-4 w-max">
+                        <i class="fa-solid fa-eye"></i> Profil Sekolah
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6">Visi Kami</h2>
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 border-brand-yellow relative">
+                        <i class="fa-solid fa-quote-left text-4xl text-slate-100 absolute top-4 right-4"></i>
+                        <p class="text-lg text-slate-700 leading-relaxed font-medium italic">
+                            "Terwujudnya peserta didik yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa, Berprestasi Tangguh, Berbudaya, Berwawasan Lingkungan, berkolaborasi dan Berkarakter Pancasila."
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-xl shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-slate-800">8</h4>
+                                <p class="text-xs text-slate-500">Ruang Kelas</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-desktop"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-slate-800">Lab</h4>
+                                <p class="text-xs text-slate-500">Komputer TIK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Misi -->
+                <div class="lg:col-span-7">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-8 lg:mt-10">Misi Sekolah</h2>
+                    <div class="space-y-4">
+                        <!-- Misi Item -->
+                        <div class="bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex gap-4 items-start group">
+                            <div class="w-10 h-10 bg-brand-blue text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-yellow group-hover:text-brand-blue transition-colors">
+                                1
+                            </div>
+                            <p class="text-slate-600">Mewujudkan peserta didik yang beriman dan bertaqwa melalui pembelajaran kegiatan pembiasaan di sekolah.</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex gap-4 items-start group">
+                            <div class="w-10 h-10 bg-brand-blue text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-yellow group-hover:text-brand-blue transition-colors">
+                                2
+                            </div>
+                            <p class="text-slate-600">Mewujudkan peserta didik yang unggul dan berprestasi dalam pembelajaran mendalam berbasis digital & ekstrakurikuler.</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex gap-4 items-start group">
+                            <div class="w-10 h-10 bg-brand-blue text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-yellow group-hover:text-brand-blue transition-colors">
+                                3
+                            </div>
+                            <p class="text-slate-600">Mewujudkan peserta didik terampil dan tangguh dalam <span class="font-semibold text-brand-blue">pembelajaran koding</span> & menyelesaikan masalah melalui kegiatan berbasis proyek.</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex gap-4 items-start group">
+                            <div class="w-10 h-10 bg-brand-blue text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-yellow group-hover:text-brand-blue transition-colors">
+                                4
+                            </div>
+                            <p class="text-slate-600">Mewujudkan peserta didik yang memiliki kesadaran, peduli lingkungan, dan berkarakter Pancasila sesuai kearifan lokal.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="ekskul" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 font-semibold text-sm mb-4">
+                    <i class="fa-solid fa-palette"></i> Pengembangan Diri
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Ekstrakurikuler Pilihan</h2>
+                <p class="text-slate-500">Wadah untuk menyalurkan dan mengembangkan potensi, bakat, serta minat siswa-siswi SD Negeri 005 Sambutan.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 rounded-3xl p-6 text-center border border-slate-100 hover:-translate-y-2 transition-transform duration-300 hover:shadow-xl group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">Wajib</div>
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-4xl text-amber-700 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-campground"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-1">Pramuka</h3>
+                    <p class="text-sm text-slate-500">Kemandirian & Kedisiplinan</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-slate-50 rounded-3xl p-6 text-center border border-slate-100 hover:-translate-y-2 transition-transform duration-300 hover:shadow-xl group">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-4xl text-slate-800 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hand-fist"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-1">Pencak Silat</h3>
+                    <p class="text-sm text-slate-500">Fisik & Ketahanan Mental</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 rounded-3xl p-6 text-center border border-slate-100 hover:-translate-y-2 transition-transform duration-300 hover:shadow-xl group">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-4xl text-brand-green mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-drum"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-1">Seni Habsy</h3>
+                    <p class="text-sm text-slate-500">Karakter Religius</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-slate-50 rounded-3xl p-6 text-center border border-slate-100 hover:-translate-y-2 transition-transform duration-300 hover:shadow-xl group">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-4xl text-brand-blue mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-1">Baca Tulis Quran</h3>
+                    <p class="text-sm text-slate-500">Kerohanian Islam</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-slate-50 rounded-3xl p-6 text-center border border-slate-100 hover:-translate-y-2 transition-transform duration-300 hover:shadow-xl group">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-4xl text-purple-500 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-masks-theater"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-1">Seni Drama</h3>
+                    <p class="text-sm text-slate-500">Pantomim & Peran</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-slate-50 rounded-3xl p-6 text-center border border-slate-100 hover:-translate-y-2 transition-transform duration-300 hover:shadow-xl group">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-4xl text-pink-500 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-paintbrush"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-1">Seni Rupa</h3>
+                    <p class="text-sm text-slate-500">Gambar Bercerita</p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-slate-50 rounded-3xl p-6 text-center border border-slate-100 hover:-translate-y-2 transition-transform duration-300 hover:shadow-xl group">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-4xl text-orange-500 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-1">Mendongeng</h3>
+                    <p class="text-sm text-slate-500">Literasi Lisan</p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-slate-50 rounded-3xl p-6 text-center border border-slate-100 hover:-translate-y-2 transition-transform duration-300 hover:shadow-xl group">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-4xl text-teal-500 mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-1">Menulis Cerita</h3>
+                    <p class="text-sm text-slate-500">Literasi Tulis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-blue text-white pt-16 pb-8 border-t-4 border-brand-yellow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <!-- Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-white text-brand-blue rounded-lg flex items-center justify-center font-bold text-lg">
+                            SD
+                        </div>
+                        <h3 class="text-xl font-bold">SDN 005 SAMBUTAN</h3>
+                    </div>
+                    <p class="text-blue-200 text-sm leading-relaxed mb-4">
+                        Menyelenggarakan pendidikan dasar yang berorientasi pada Profil Pelajar Pancasila, inovasi digital, dan kelestarian lingkungan hidup.
+                    </p>
+                </div>
+
+                <!-- Kontak -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-brand-yellow">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-sm text-blue-100">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-yellow"></i>
+                            <span>Jalan Sungai Kapih No.08 RT 03<br>Kecamatan Sambutan, Kota Samarinda</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-yellow"></i>
+                            <span>sd005sambutan@gmail.com</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-fingerprint text-brand-yellow"></i>
+                            <span>NPSN: 30402991</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tautan -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-brand-yellow">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-sm text-blue-100">
+                        <li><a href="#beranda" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Beranda</a></li>
+                        <li><a href="#profil" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Profil & Visi Misi</a></li>
+                        <li><a href="#ekskul" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Ekstrakurikuler</a></li>
+                        <li><button onclick="openModal()" class="hover:text-brand-yellow transition-colors flex items-center gap-2 font-bold"><i class="fa-solid fa-qrcode text-xs"></i> Portal Absensi</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300">
+                <p>&copy; 2026 SD Negeri 005 Sambutan. All rights reserved.</p>
+                <p class="flex items-center gap-2">
+                    <i class="fa-solid fa-file-pdf"></i> Referensi: Dokumen KSP SDN 005 SAMBUTAN 2025-2026
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Backdrop -->
+    <div id="absensi-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-brand-blue/80 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop" onclick="closeModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="flex items-center justify-center min-h-screen px-4 py-8">
+            <div id="modal-content" class="bg-white rounded-[2rem] w-full max-w-2xl shadow-2xl relative z-10 transform scale-95 opacity-0 transition-all duration-300 overflow-hidden flex flex-col">
+                
+                <!-- Close Btn -->
+                <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-slate-100 hover:bg-slate-200 text-slate-500 rounded-full flex items-center justify-center transition-colors z-20">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+
+                <div class="bg-gradient-to-r from-brand-blue to-blue-600 p-8 text-center relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+                    <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-2xl mx-auto flex items-center justify-center text-3xl text-white mb-4 border border-white/30 shadow-inner">
+                        <i class="fa-solid fa-fingerprint"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-1 relative z-10">Portal Absensi Digital</h2>
+                    <p class="text-blue-100 text-sm relative z-10">Silakan pilih portal absensi sesuai dengan peran Anda hari ini.</p>
+                </div>
+
+                <div class="p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Absen Siswa -->
+                        <div class="border-2 border-slate-100 hover:border-brand-blue rounded-2xl p-6 text-center cursor-pointer transition-all hover:shadow-lg group bg-slate-50 hover:bg-white" onclick="handleAbsen('siswa')">
+                            <div class="w-20 h-20 bg-blue-100 text-brand-blue rounded-full mx-auto flex items-center justify-center text-4xl mb-4 group-hover:scale-110 group-hover:bg-brand-blue group-hover:text-white transition-all">
+                                <i class="fa-solid fa-children"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Absensi Siswa</h3>
+                            <p class="text-sm text-slate-500 mb-6">Pengisian absensi kehadiran harian khusus peserta didik.</p>
+                            <span class="inline-block w-full py-3 rounded-xl bg-brand-yellow text-brand-blue font-bold group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                                Masuk Portal <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </span>
+                        </div>
+
+                        <!-- Absen Guru -->
+                        <div class="border-2 border-slate-100 hover:border-brand-green rounded-2xl p-6 text-center cursor-pointer transition-all hover:shadow-lg group bg-slate-50 hover:bg-white" onclick="handleAbsen('guru')">
+                            <div class="w-20 h-20 bg-green-100 text-brand-green rounded-full mx-auto flex items-center justify-center text-4xl mb-4 group-hover:scale-110 group-hover:bg-brand-green group-hover:text-white transition-all">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Absensi Guru</h3>
+                            <p class="text-sm text-slate-500 mb-6">Portal absensi khusus untuk tenaga pendidik & kependidikan.</p>
+                            <span class="inline-block w-full py-3 rounded-xl bg-green-100 text-brand-green font-bold group-hover:bg-brand-green group-hover:text-white transition-colors">
+                                Masuk Portal <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                    
+                    <div id="absen-message" class="hidden mt-6 p-4 rounded-xl text-center text-sm font-medium"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('py-0');
+                navbar.classList.remove('py-2');
+            } else {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-0');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menutup menu mobile jika link diklik
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('absensi-modal');
+        const backdrop = document.getElementById('modal-backdrop');
+        const modalContent = document.getElementById('modal-content');
+        const messageBox = document.getElementById('absen-message');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            // Trigger animation frame for CSS transitions to work
+            requestAnimationFrame(() => {
+                backdrop.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95', 'opacity-0');
+            });
+            // Reset message
+            messageBox.classList.add('hidden');
+        }
+
+        function closeModal() {
+            backdrop.classList.add('opacity-0');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            // Tunggu transisi selesai sebelum dihide
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Handle Absensi Click (Pengganti Alert)
+        function handleAbsen(type) {
+            messageBox.classList.remove('hidden', 'bg-blue-50', 'text-brand-blue', 'bg-green-50', 'text-brand-green');
+            
+            if(type === 'siswa') {
+                messageBox.classList.add('bg-blue-50', 'text-brand-blue');
+                messageBox.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Mengarahkan ke Google Form Absensi Siswa... (Simulasi)';
+            } else {
+                messageBox.classList.add('bg-green-50', 'text-brand-green');
+                messageBox.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Mengarahkan ke Portal Absensi Guru... (Simulasi)';
+            }
+
+            // Simulasi loading redirect
+            setTimeout(() => {
+                messageBox.innerHTML = '<i class="fa-solid fa-check-circle mr-2"></i> Berhasil. Di sistem nyata, pengguna akan berpindah halaman.';
+                setTimeout(closeModal, 2000);
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
